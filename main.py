@@ -6,10 +6,11 @@ reddit = praw.Reddit(
     #Get this information in https://www.reddit.com/prefs/apps
     client_id="k4Yos5koWU2ULw",
     client_secret="c9hSWfYGOlpjD1RMazB39SeZ5msuiw",
-
-    user_agent="<console:WingMan>",
-    username= "Affectionate_Mud_327",
-    password = "09487311743b")
+    
+    #Put your account info here
+    user_agent="",
+    username= "",
+    password = "")
 
 subreddit = reddit.subreddit("AskMen")
 
@@ -19,9 +20,6 @@ sad_quotes = ["“The Best Way To Get Started Is To Quit Talking And Begin Doing
               "“The way to love anything is to realize that it may be lost.”— Gilbert K. Chesterton"]
 
 for submission in subreddit.hot(limit = 10):
-    #print("+++++++++++++++++++")
-    #print(submission.title)
-
     for comment in submission.comments:
         if hasattr(comment, "body"):
             comment_lower = comment.body.lower()
