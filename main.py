@@ -4,8 +4,8 @@ import time
 
 reddit = praw.Reddit(
     #Get this information in https://www.reddit.com/prefs/apps
-    client_id="k4Yos5koWU2ULw",
-    client_secret="c9hSWfYGOlpjD1RMazB39SeZ5msuiw",
+    client_id="",
+    client_secret="",
     
     #Put your account info here
     user_agent="",
@@ -28,4 +28,5 @@ for submission in subreddit.hot(limit = 10):
                 print(comment.body)
                 random_index = random.randint(0, len(sad_quotes)-1)
                 comment.reply(sad_quotes[random_index])
+                comment.upvote()
                 time.sleep(300)
